@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Generator - Create Magical Tales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="magical-bg"></div>
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1>✨ Story Generator</h1>
+            <p class="subtitle">Craft magical tales with the power of AI</p>
+        </header>
+
+        <div class="story-form">
+            <div class="form-section">
+                <h3>🎭 Story Parameters</h3>
+
+                <div class="input-group">
+                    <label for="genre">📚 Genre</label>
+                    <input type="text" id="genre" placeholder="sci-fi, fantasy, mystery, romance...">
+                    <div class="examples">
+                        <div class="example-tags">
+                            <span class="example-tag">sci-fi</span>
+                            <span class="example-tag">fantasy</span>
+                            <span class="example-tag">mystery</span>
+                            <span class="example-tag">romance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="theme">🎯 Theme</label>
+                    <input type="text" id="theme" placeholder="friendship, adventure, revenge, discovery...">
+                    <div class="examples">
+                        <div class="example-tags">
+                            <span class="example-tag">friendship</span>
+                            <span class="example-tag">adventure</span>
+                            <span class="example-tag">courage</span>
+                            <span class="example-tag">discovery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="setting">🌍 Setting</label>
+                    <input type="text" id="setting" placeholder="space station, medieval castle, modern city...">
+                    <div class="examples">
+                        <div class="example-tags">
+                            <span class="example-tag">space station</span>
+                            <span class="example-tag">medieval castle</span>
+                            <span class="example-tag">underwater city</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="error-message" style="display: none;">
+                    ⚠️ We're experiencing some technical difficulties with our AI service. You can try again or use our
+                    sample stories below.
+                </div>
+
+                <div id="sampleStories" class="sample-stories">
+                    <p>Try one of our sample stories:</p>
+                    <div style="margin-top: 10px;">
+                        <button class="sample-story-btn" onclick="loadSampleStory(0)">Space Adventure</button>
+                        <button class="sample-story-btn" onclick="loadSampleStory(1)">Fantasy Quest</button>
+                        <button class="sample-story-btn" onclick="loadSampleStory(2)">Mystery Thriller</button>
+                    </div>
+                </div>
+
+                <button class="generate-btn" onclick="generateStory()">
+                    <div class="loading-spinner" id="spinner"></div>
+                    <span id="btn-text">✨ Generate Story</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="story-display" id="storyDisplay">
+            <div class="story-header">
+                <h3 class="story-title">📖 Your Generated Story</h3>
+                <div class="story-actions">
+                    <button class="action-btn" onclick="copyStory()">📋 Copy</button>
+                    <button class="action-btn" onclick="generateStory()">🔄 New Story</button>
+                </div>
+            </div>
+            <div class="story-content" id="story"></div>
+        </div>
+    </div>
+
+    <script src="https://js.puter.com/v2/"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
